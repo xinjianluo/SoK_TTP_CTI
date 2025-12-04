@@ -66,7 +66,7 @@ The parameter `RUN_DEVICE` makes you select the GPU device where to run the proj
 You can test the successful build by executing the following:
 
 ```bash
-$ docker run --gpus all -it sok-classification
+$ docker run --gpus all --mount type=bind,source=/home/ubuntu/XJDATA/SoK_TTP_CTI,target=/sok -it sok-classification
 ```
 
 This should partially reproduce the results shown in Table 6 of our paper.
@@ -75,7 +75,7 @@ This should partially reproduce the results shown in Table 6 of our paper.
 
 If you want to use the project, you can open the container with:
 ```
-$ docker run --gpus all -it sok-classification bash
+$ docker run --gpus all --mount type=bind,source=/home/ubuntu/XJDATA/SoK_TTP_CTI,target=/sok -it sok-classification bash
 ```
 
 Now, for calculating the results of Tables 6, 7, 8, and Figure 4 of the original paper -- which all use classification models -- you can execute the bash scripts contained in `artifact_eval/`.
